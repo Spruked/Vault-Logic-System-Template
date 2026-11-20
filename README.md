@@ -2,6 +2,72 @@
 
 *Universal, modular blueprint now with cognitive tracing, persistent memory, and observability layers. Inspired by emergent AI symbol systems (glyphs for latent space mapping), memory-augmented architectures (e.g., Neural Turing Machines with external matrices), and telemetry patterns for modular AI (e.g., MCP for prompt optimization and agent traces).*
 
+## Canonical design intent and host-specific deployment
+
+**The Vault Logic System is a complete, reusable framework for organizing, evaluating, resolving, and tracing logic defined by a host application.** Its architecture is independent of the subject matter placed in its vaults. The system may serve an AI assistant, an orchestration platform, a communications service, a business application, or another host without becoming a different kind of engine.
+
+**Canonical reuse rule:** Deploy the entire Vault Logic System architecture. Change the host-specific *title, names, data folders, vault categories, saved-record labels, configuration contents, and database namespaces* to reflect the receiving product. Do not cherry-pick individual files, substitute a simplified rules folder, or rebuild the architecture for each application. Names and contents adapt; architectural responsibilities and functional design remain.
+
+### Responsibilities of the complete Vault Logic System
+
+| Architectural area | Design intent |
+| --- | --- |
+| Configuration | Define the host environment, vault registration, priorities, applicable rule metadata, and declared telemetry settings. |
+| Logic vaults | Contain bounded groups of host-defined logic with metadata, rule definitions, supporting explanations, and validation cases. Vaults are **logic containers**, not A.I.M.S. evidence ledgers. |
+| Evaluation engine | Determine applicable vaults, evaluate their declared conditions, resolve or expose conflicts according to the configured rules, and return a traceable result to the host. |
+| Glyph tracing | Produce symbolic *evaluation breadcrumbs* for decisions, transitions, conflicts, and other meaningful events. These glyphs are observability artifacts, not proof of cryptographic integrity. |
+| Memory matrix | Retain the Vault Logic System's own working or persistent context and prior evaluation references according to its specified configuration and lifecycle. It remains part of the complete Vault Logic System even when A.I.M.S. is also deployed. |
+| Telemetry | Expose evaluations, timing, error and anomaly signals, and diagnostic traces so operators can inspect what occurred. |
+| Interfaces | Expose host integration surfaces, including documented API/CLI contracts and optional presentation interfaces. |
+| Tests, docs, scripts, examples | Define expected behavior, verify deployment adaptations, and support maintenance. These are not dispensable merely because a host has its own tooling. |
+
+### Intended operating flow
+
+1. **Host input:** The host supplies a request or operational condition with its own context, identity, and declared constraints.
+2. **Determine applicable logic:** The Vault Logic System loads the corresponding host-named vault definitions and configuration.
+3. **Evaluate:** The engine applies matching rule logic and determines applicable findings, conflicts, and evaluation results.
+4. **Remember local evaluation context:** The system consults and updates its *own* memory matrix as configured, without treating that matrix as an A.I.M.S. substitute.
+5. **Trace and observe:** Glyphs and telemetry expose the evaluation path, timing, and noteworthy outcomes.
+6. **Return to host:** The host receives the evaluation and supporting trace through a defined interface. Final authorization and external execution remain with the host's separately defined authority.
+
+The Vault Logic System evaluates logic; it does not automatically acquire the host's power to execute arbitrary actions. A host can choose to use its evaluated results as input to a distinct policy or execution authority.
+
+### What changes from one deployment to another
+
+| Host adaptation | Permitted when references and integrity are preserved |
+| --- | --- |
+| System title and root data-folder name | HARO Vault Logic System, ORBOT Vault Logic System, VIV Vault Logic System, etc. |
+| Vault and category labels | Capability rules, scheduling rules, relationship rules, communications rules, and future domain-specific classifications. |
+| Saved content | Rules, documents, conditions, metadata, validation examples, and evaluation history relevant to the host. |
+| Data namespaces and storage paths | Host-owned records, matrix names, file collections, and database namespaces. |
+| Configuration and environment values | Host-specific settings and declared interfaces, within the system's supported contracts. |
+
+**What must not change merely for a new host:** the complete component design; the distinction between vaults, engine, glyph tracing, memory matrix, telemetry, and interfaces; existing functional contracts; or persisted integrity references. Renaming an internal file or code module that other modules import is a software migration, not simply a host-content rename. Such changes require compatibility checks and tests.
+
+### Relationship to A.I.M.S. (Agnostic Immutable Memory System)
+
+**A.I.M.S. is a separate, complete memory system that may sit alongside the Vault Logic System in the same host.** Do not embed only selected A.I.M.S. files inside this template or replace this template's own memory matrix with a reduced version of A.I.M.S.
+
+- **Vault Logic System:** What host-defined logic applies, how was it evaluated, and what trace resulted?
+- **A.I.M.S.:** What evidence and experience were retained, how are they organized and retrieved, and what provenance supports them?
+- **Host application:** Which actions are authorized, and which evaluated results or memories may be used for the current operation?
+
+The Vault Logic System's *logic vaults* and A.I.M.S.' *immutable evidence Vault* are different constructs. Likewise, Vault Logic System *trace glyphs* and A.I.M.S. *integrity Glyphs* have different jobs. Preserve both roles rather than merging them because of naming overlap.
+
+### HARO host example
+
+A HARO deployment might title its complete instance **HARO Vault Logic System** and populate its vaults with capability eligibility rules, admission constraints, reservation policy, model-residency conditions, recovery rules, and configuration validation logic. HARO's separately governed scheduler remains responsible for real resource admission and execution. A complete A.I.M.S. instance can sit alongside the HARO Vault Logic System to retain historical configurations, measured workload outcomes, and relevant experience.
+
+The host changes the records and titles; neither underlying architecture is rebuilt.
+
+### Implementation-status boundary
+
+This repository is a **template and example framework**. Some committed engine functions, memory hooks, interfaces, and telemetry examples are illustrative or placeholders. The design intent above defines the complete architectural pattern; it does **not** assert that every documented example is a production-ready implementation. Each host deployment must validate its integrated behavior, traceability, retention, error handling, and recovery against its actual code.
+
+**Cross-product rule:** Reuse the whole Vault Logic System. Adapt the host-specific names and content. Keep A.I.M.S. whole and independent when installed beside it.
+
+---
+
 > **What's New:**
 > - **Glyph Trace:** Symbolic "breadcrumbs" for visualizing decision paths – like attention glyphs in cross-model AI interpretability or recursive symbols for conceptual drift .
 > - **Memory Matrix:** A dynamic, external store for stateful recall – drawing from cognitive architectures like Jarvis or DNCs .
