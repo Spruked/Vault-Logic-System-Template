@@ -2,6 +2,14 @@
 
 *Universal, modular blueprint now with cognitive tracing, persistent memory, and observability layers. Inspired by emergent AI symbol systems (glyphs for latent space mapping), memory-augmented architectures (e.g., Neural Turing Machines with external matrices), and telemetry patterns for modular AI (e.g., MCP for prompt optimization and agent traces).*
 
+## Ratified and hash-sealed deployment doctrine (v1.0)
+
+**REUSE THE SYSTEM, NOT THE COMPONENTS.** A.I.M.S. and the Vault Logic System are each deployed as a **complete, host-owned system**, not one shared cross-product service and not a selection of reusable files. Their architecture remains intact. The host may change its deployment title, data names, directories, collections, vault labels, and stored content, subject to verified preservation of imports, historical identifiers, schema contracts, and integrity references. When both systems are used, each remains a complete sibling subsystem.
+
+**Canonical authority:** [Complete-System Deployment Doctrine v1.0](docs/COMPLETE_SYSTEM_REUSE_DOCTRINE_v1.0.md) (PPSAI-CSD-001; frozen 2026-11-19). **SHA-256 (UTF-8 file bytes):** `83a48f537c0084cb919e439989aae4473f6a0c0e8b953815d85018da88759f82`. Verify against [the adjacent checksum manifest](docs/COMPLETE_SYSTEM_REUSE_DOCTRINE_v1.0.sha256) **before integration**. Its frozen clauses supersede any ambiguous wording in descriptive README examples. Changes to the doctrine require an explicitly approved, newly versioned amendment; do not silently rewrite v1.0. A checksum detects changes but is not itself cryptographic signing or access-control enforcement.
+
+---
+
 ## Canonical design intent and host-specific deployment
 
 **The Vault Logic System is a complete, reusable framework for organizing, evaluating, resolving, and tracing logic defined by a host application.** Its architecture is independent of the subject matter placed in its vaults. The system may serve an AI assistant, an orchestration platform, a communications service, a business application, or another host without becoming a different kind of engine.
